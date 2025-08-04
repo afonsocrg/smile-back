@@ -1,13 +1,11 @@
 import { useState, useEffect } from 'react'
 import { useLocalStorage } from '@uidotdev/usehooks'
-import { HelpCircle } from 'lucide-react'
 import { STORAGE_KEYS } from './constants/storage'
 import type { SmileEntry, DailyStats } from './types/smile'
 import { posthog } from './lib/posthog'
 import {
   Dialog,
   DialogContent,
-  DialogDescription,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
@@ -80,43 +78,9 @@ export function App() {
       <div className="max-w-md mx-auto pt-8">
         {/* Header */}
         <div className="text-center mb-8">
-          <div className="flex items-center justify-center gap-3 mb-2">
-            <h1 className="text-3xl font-bold text-warm-700">
-              SmileBack 😁
-            </h1>
-            <Dialog>
-              <DialogTrigger asChild>
-                <button className="p-2 rounded-full hover:bg-warm-100 transition-colors cursor-pointer">
-                  <HelpCircle className="h-5 w-5 text-warm-600" />
-                </button>
-              </DialogTrigger>
-              <DialogContent className="max-w-md bg-warm-50 border-warm-200">
-                <DialogHeader>
-                  <DialogTitle className="text-warm-800 text-xl">How it works</DialogTitle>
-                  <DialogDescription className="text-warm-700 text-left space-y-3 pt-2">
-                    <div>
-                      <strong className="text-warm-800">1. Smile at someone</strong> in real life - a stranger, friend, or colleague.
-                    </div>
-                    <div>
-                      <strong className="text-warm-800">2. Record the interaction:</strong>
-                      <ul className="mt-1 ml-4 space-y-1">
-                        <li>• Tap "Person Smiled Back" if they returned your smile</li>
-                        <li>• Tap "Person Didn't Smile Back" if they didn't respond</li>
-                      </ul>
-                    </div>
-                    <div>
-                      <strong className="text-warm-800">3. Watch your impact grow!</strong> See how many new smiles you've brought to the world today.
-                    </div>
-                    <div className="pt-2 border-t border-warm-200">
-                      <p className="text-sm text-warm-600">
-                        Every smile you give creates positivity. When someone smiles back, you've created two new smiles! ✨
-                      </p>
-                    </div>
-                  </DialogDescription>
-                </DialogHeader>
-              </DialogContent>
-            </Dialog>
-          </div>
+          <h1 className="text-3xl font-bold text-warm-700 mb-2">
+            SmileBack 😁
+          </h1>
           <p className="text-neutral-600 text-sm">
             Spread joy, one smile at a time
           </p>
@@ -176,9 +140,56 @@ export function App() {
           </button>
         </div>
 
+        {/* How it works - Discrete text */}
+        <div className="text-center mt-6">
+          <Dialog>
+            <DialogTrigger asChild>
+              <button className="text-neutral-500 text-sm underline hover:text-neutral-600 transition-colors">
+                How it works
+              </button>
+            </DialogTrigger>
+            <DialogContent className="sm:max-w-md">
+              <DialogHeader>
+                <DialogTitle>How to Use SmileBack</DialogTitle>
+              </DialogHeader>
+              <div className="text-left space-y-3 pt-2">
+                <div className="flex items-start gap-3">
+                  <span className="font-semibold">1.</span>
+                  <span>
+                    If you make eye contact with someone, give them the kindest
+                    and purest smile you have
+                  </span>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="font-semibold">2.</span>
+                  <span>
+                    If the person smiles back, click on the green button
+                  </span>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="font-semibold">3.</span>
+                  <span>
+                    If the person doesn't smile back, click on the gray one
+                  </span>
+                </div>
+                <div className="pt-4 border-t border-neutral-200">
+                  <div className="text-warm-700 font-medium">
+                    No matter the outcome, whenever you smile at others, you
+                    make this world a better place. If they smile back, it's a
+                    bonus!
+                  </div>
+                  <div className="mt-2 text-neutral-600">
+                    Have a wholesome day! ✨
+                  </div>
+                </div>
+              </div>
+            </DialogContent>
+          </Dialog>
+        </div>
+
         {/* Encouragement */}
         {stats.totalSmiles === 0 && (
-          <div className="text-center mt-8">
+          <div className="text-center mt-4">
             <p className="text-neutral-500 text-sm">
               Start spreading smiles! Tap a button when you smile at someone.
             </p>
