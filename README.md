@@ -1,69 +1,54 @@
-# React + TypeScript + Vite
+# SmileBack 😊
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple web app to track your daily smiles and the positive impact you have on others.
 
-Currently, two official plugins are available:
+![SmileBack Screenshot](smile_back_screenshot.png)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## What is SmileBack?
 
-## Expanding the ESLint configuration
+SmileBack helps you:
+- Track how many people you smile at each day
+- Record whether people smile back at you
+- See your positive impact: total new smiles you've brought to the world
+- Build a habit of spreading joy and kindness
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## How it works
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+1. **Smile at someone** in real life
+2. **Open the app** and record the interaction:
+   - Tap "Person Smiled Back" if they returned your smile
+   - Tap "Person Didn't Smile Back" if they didn't respond
+3. **Watch your impact grow** - see how many new smiles you've created today
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+## Why track smiles?
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+- **Builds awareness** of your positive interactions
+- **Encourages more smiling** by gamifying kindness  
+- **Shows your impact** - every smile you give creates new positivity
+- **Creates a positive feedback loop** that brightens your day
+
+## Development
+
+Built with:
+- React 19 + TypeScript
+- Vite for fast development
+- TailwindCSS v4 for styling
+- PostHog for analytics
+- Local storage for data persistence
+
+### Getting Started
+
+```bash
+bun install
+bun dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Building
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+bun run build
 ```
+
+## Privacy
+
+All smile data is stored locally on your device. Only anonymous analytics events are sent to help improve the app.
