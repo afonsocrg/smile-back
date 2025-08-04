@@ -1,8 +1,17 @@
 import { useState, useEffect } from 'react'
 import { useLocalStorage } from '@uidotdev/usehooks'
+import { HelpCircle } from 'lucide-react'
 import { STORAGE_KEYS } from './constants/storage'
 import type { SmileEntry, DailyStats } from './types/smile'
 import { posthog } from './lib/posthog'
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from '@/components/ui/dialog'
 
 export function App() {
   const [entries, setEntries] = useLocalStorage<SmileEntry[]>(STORAGE_KEYS.SMILE_ENTRIES, [])
@@ -71,9 +80,43 @@ export function App() {
       <div className="max-w-md mx-auto pt-8">
         {/* Header */}
         <div className="text-center mb-8">
-          <h1 className="text-3xl font-bold text-warm-700 mb-2">
-            SmileBack 😁
-          </h1>
+          <div className="flex items-center justify-center gap-3 mb-2">
+            <h1 className="text-3xl font-bold text-warm-700">
+              SmileBack 😁
+            </h1>
+            <Dialog>
+              <DialogTrigger asChild>
+                <button className="p-2 rounded-full hover:bg-warm-100 transition-colors cursor-pointer">
+                  <HelpCircle className="h-5 w-5 text-warm-600" />
+                </button>
+              </DialogTrigger>
+              <DialogContent className="max-w-md bg-warm-50 border-warm-200">
+                <DialogHeader>
+                  <DialogTitle className="text-warm-800 text-xl">How it works</DialogTitle>
+                  <DialogDescription className="text-warm-700 text-left space-y-3 pt-2">
+                    <div>
+                      <strong className="text-warm-800">1. Smile at someone</strong> in real life - a stranger, friend, or colleague.
+                    </div>
+                    <div>
+                      <strong className="text-warm-800">2. Record the interaction:</strong>
+                      <ul className="mt-1 ml-4 space-y-1">
+                        <li>• Tap "Person Smiled Back" if they returned your smile</li>
+                        <li>• Tap "Person Didn't Smile Back" if they didn't respond</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <strong className="text-warm-800">3. Watch your impact grow!</strong> See how many new smiles you've brought to the world today.
+                    </div>
+                    <div className="pt-2 border-t border-warm-200">
+                      <p className="text-sm text-warm-600">
+                        Every smile you give creates positivity. When someone smiles back, you've created two new smiles! ✨
+                      </p>
+                    </div>
+                  </DialogDescription>
+                </DialogHeader>
+              </DialogContent>
+            </Dialog>
+          </div>
           <p className="text-neutral-600 text-sm">
             Spread joy, one smile at a time
           </p>
@@ -118,7 +161,7 @@ export function App() {
         <div className="space-y-4">
           <button
             onClick={handleSmileBack}
-            className="w-full bg-smile-500 hover:bg-smile-600 active:bg-smile-700 text-white font-semibold py-6 px-8 rounded-2xl text-xl shadow-lg transition-all duration-150 transform active:scale-95"
+            className="w-full bg-smile-500 hover:bg-smile-600 active:bg-smile-700 text-white font-semibold py-6 px-8 rounded-2xl text-xl shadow-lg transition-all duration-150 transform active:scale-95 cursor-pointer"
           >
             <span className="text-2xl mr-3">😁</span>
             Person Smiled Back
@@ -126,7 +169,7 @@ export function App() {
 
           <button
             onClick={handleNoSmileBack}
-            className="w-full bg-neutral-400 hover:bg-neutral-500 active:bg-neutral-600 text-white font-semibold py-6 px-8 rounded-2xl text-xl shadow-lg transition-all duration-150 transform active:scale-95"
+            className="w-full bg-neutral-400 hover:bg-neutral-500 active:bg-neutral-600 text-white font-semibold py-6 px-8 rounded-2xl text-xl shadow-lg transition-all duration-150 transform active:scale-95 cursor-pointer"
           >
             <span className="text-2xl mr-3">😔</span>
             Person Didn't Smile Back
