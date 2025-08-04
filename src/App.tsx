@@ -118,7 +118,7 @@ export function App() {
         <div className="space-y-4">
           <button
             onClick={handleSmileBack}
-            className="w-full bg-smile-500 hover:bg-smile-600 active:bg-smile-700 text-white font-semibold py-6 px-8 rounded-2xl text-xl shadow-lg transition-all duration-150 transform active:scale-95"
+            className="w-full bg-smile-500 hover:bg-smile-600 active:bg-smile-700 text-white font-semibold py-6 px-8 rounded-2xl text-xl shadow-lg transition-all duration-150 transform active:scale-95 cursor-pointer"
           >
             <span className="text-2xl mr-3">😁</span>
             Person Smiled Back
@@ -126,7 +126,7 @@ export function App() {
 
           <button
             onClick={handleNoSmileBack}
-            className="w-full bg-neutral-400 hover:bg-neutral-500 active:bg-neutral-600 text-white font-semibold py-6 px-8 rounded-2xl text-xl shadow-lg transition-all duration-150 transform active:scale-95"
+            className="w-full bg-neutral-400 hover:bg-neutral-500 active:bg-neutral-600 text-white font-semibold py-6 px-8 rounded-2xl text-xl shadow-lg transition-all duration-150 transform active:scale-95 cursor-pointer"
           >
             <span className="text-2xl mr-3">😔</span>
             Person Didn't Smile Back
