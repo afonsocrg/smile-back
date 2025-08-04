@@ -3,6 +3,14 @@ import { useLocalStorage } from '@uidotdev/usehooks'
 import { STORAGE_KEYS } from './constants/storage'
 import type { SmileEntry, DailyStats } from './types/smile'
 import { posthog } from './lib/posthog'
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog"
 
 export function App() {
   const [entries, setEntries] = useLocalStorage<SmileEntry[]>(STORAGE_KEYS.SMILE_ENTRIES, [])
@@ -133,9 +141,47 @@ export function App() {
           </button>
         </div>
 
+        {/* How it works - Discrete text */}
+        <div className="text-center mt-6">
+          <Dialog>
+            <DialogTrigger asChild>
+              <button className="text-neutral-500 text-sm underline hover:text-neutral-600 transition-colors">
+                How it works
+              </button>
+            </DialogTrigger>
+            <DialogContent className="sm:max-w-md">
+              <DialogHeader>
+                <DialogTitle>How to Use SmileBack</DialogTitle>
+              </DialogHeader>
+              <div className="text-left space-y-3 pt-2">
+                <div className="flex items-start gap-3">
+                  <span className="text-warm-600 font-semibold">1.</span>
+                  <span>If you make eye contact with someone, give them the kindest and purest smile you have</span>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-smile-600 font-semibold">2.</span>
+                  <span>If the person smiles back, click on the green button</span>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-neutral-600 font-semibold">3.</span>
+                  <span>If the person doesn't smile back, click on the gray one</span>
+                </div>
+                <div className="pt-4 border-t border-neutral-200">
+                  <div className="text-warm-700 font-medium">
+                    No matter the outcome, whenever you smile at others, you make this world a better place. If they smile back, it's a bonus!
+                  </div>
+                  <div className="mt-2 text-neutral-600">
+                    Have a wholesome day! ✨
+                  </div>
+                </div>
+              </div>
+            </DialogContent>
+          </Dialog>
+        </div>
+
         {/* Encouragement */}
         {stats.totalSmiles === 0 && (
-          <div className="text-center mt-8">
+          <div className="text-center mt-4">
             <p className="text-neutral-500 text-sm">
               Start spreading smiles! Tap a button when you smile at someone.
             </p>
