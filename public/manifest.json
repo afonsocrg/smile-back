@@ -1,0 +1,20 @@
+{
+  "name": "SmileBack - Spread Joy",
+  "short_name": "SmileBack",
+  "description": "Track and celebrate the simple act of sharing smiles with strangers",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#fef7f0",
+  "theme_color": "#f2804a",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/vite.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["lifestyle", "health", "social"],
+  "lang": "en-US"
+}

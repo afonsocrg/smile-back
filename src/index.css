@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-din: 'DIN Next Rounded', 'Inter', system-ui, sans-serif;
+  
+  --color-warm-50: #fef7f0;
+  --color-warm-100: #feeee0;
+  --color-warm-200: #fcdcc1;
+  --color-warm-300: #f9c297;
+  --color-warm-400: #f5a06b;
+  --color-warm-500: #f2804a;
+  --color-warm-600: #e3632f;
+  --color-warm-700: #c04e26;
+  --color-warm-800: #9a4125;
+  --color-warm-900: #7c3a24;
+  
+  --color-smile-50: #f0fdf4;
+  --color-smile-100: #dcfce7;
+  --color-smile-200: #bbf7d0;
+  --color-smile-300: #86efac;
+  --color-smile-400: #4ade80;
+  --color-smile-500: #22c55e;
+  --color-smile-600: #16a34a;
+  --color-smile-700: #15803d;
+  --color-smile-800: #166534;
+  --color-smile-900: #14532d;
+}
+
+@layer base {
+  html {
+    font-family: theme(font.din);
+  }
+  
+  body {
+    margin: 0;
+    min-height: 100vh;
+    background-color: theme(color.warm.50);
+    color: theme(color.neutral.800);
+    font-family: theme(font.din);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
