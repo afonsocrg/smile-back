@@ -1,69 +1,34 @@
-# React + TypeScript + Vite
+# SmileBack 😁
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Spread joy, one smile at a time**
 
-Currently, two official plugins are available:
+[SmileBack](https://smile-back.afonsocrg.com) is an App designed to help you track the smiles you give to others and check how many people smile back.
+The goal is to make this world a bit brighter by encouraging people to smile more, feel better, and ultimately be happier.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Try It Live!
 
-## Expanding the ESLint configuration
+The Smile Back app is live at **[smile-back.afonsocrg.com](https://smile-back.afonsocrg.com)**
+<!-- ![Smile back screenshot](./smile_back_screenshot.png "Optional title text") -->
+<img src="./smile_back_screenshot.png" alt="Smile back screenshot" height="500">
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 📱 How It Works
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+Transform everyday moments into opportunities to spread joy:
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+1. **Open SmileBack** and keep it ready throughout your day
+2. When you make eye contact with someone (on the street, public transport, in shops), give them the kindest and purest smile you have
+3. Tap the appropriate button:
+   - 😁 **Green button** if the person smiles back
+   - 😔 **Gray button** if they don't smile back
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+**Remember**: No matter the outcome, whenever you smile at others, you make this world a better place. If they smile back, it's a wonderful bonus! ✨
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🌍 Join the Movement
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Every smile matters. Start your journey today and help create a chain reaction of positivity that ripples through our communities. 
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+**Remember: A smile is the shortest distance between two people.** 😊
+
+---
+
+*Made with ❤️ to spread more smiles in the world*
