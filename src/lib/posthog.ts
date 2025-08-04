@@ -8,7 +8,7 @@ export const initPostHog = () => {
     posthog.init(posthogKey, {
       api_host: posthogHost,
       person_profiles: 'identified_only',
-      capture_pageview: false, // Disable automatic pageview capture since it's a SPA
+      capture_pageview: true, // Enable automatic pageview capture
       capture_pageleave: true,
     })
   } else {
